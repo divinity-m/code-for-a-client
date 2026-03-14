@@ -27,7 +27,6 @@ function findTopScores(runs) {
   
   // Return top scores as an array
   var bestRuns = [first, second, third];
-  // console.log(bestRuns)
   return bestRuns;
 }
 
