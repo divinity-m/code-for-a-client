@@ -41,8 +41,8 @@ function displayRuns(runs, element) {
     onmouseleave="mouseLeftRun('Del ${run["runNum"]}')" >
     
     ${run["runNum"]} <br>
-    Complete Time: ${run["completeTime"]} <br>
-    Obstacles Hit: ${run["obstaclesHit"]} <br>
+    Complete Time: ${run["completeTime"]}s <br>
+    Obstacles Hit: ${run["obstaclesHit"]} Hits <br>
     Score: ${run["score"]} <br>
     
     <button id="Del ${run["runNum"]}" class="del" style="display: none"
