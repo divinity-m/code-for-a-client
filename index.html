@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+  <head>
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+
+    <title>Gunners Log</title>
+    <link rel="icon" href="images/gunner-icon.png" >
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Scripts -->
+    <script defer src="script.js"></script>
+    <script defer src="divine.js"></script>
+    <script defer src="sebastian.js"></script>
+  </head>
+  
+  <body>
+    <img src="images/logo.png" width="100px">
+    <br>
+
+    <label for="time-complete-el">Completion Time (In Seconds): </label>
+    <input type="number" id="time-complete-el" value="0">
+    <hr>
+
+    <label for="obstacles-hit-el">Obstacles Hit: </label>
+    <input type="number" id="obstacles-hit-el" value="0">
+    <br>
+    <br>
+
+    <button id="log-run-btn">Enter Run</button>
+
+    <div class="flexLayout">
+      <div id="runs-container" height="400px">
+        <h1>Runs</h1>
+      </div>
+  
+      <div id="scores-container">
+        <h2>Best Runs</h2>
+        <hr>
+  
+        <span>Top Three Scores:</span>
+        <p> First: No Run | 0 </p>
+        <p> Second: No Run | 0 </p>
+        <p> Third: No Run | 0 </p>
+      </div>
+    </div>
+    
+    <div id="stats-container">
+      <h1>Stats</h1>
+      <p>Fastest Time: None   |   Lowest Collisions: None  |   Highest Score: None</p>
+      <p>Average Time: None   |   Average Collisions: None  |   Average Score: None</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+html {
+  background-color: #00294d;
+}
+
+body {
+  background-color: #9cdbff;
+  width: 960px;
+  font-family: "Bruno Ace SC";
+  text-align: center;
+  margin: auto;
+  padding: 25px;
+}
+
+img {
+  width: 300px;
+}
+
+/* input related */
+label {
+  font-family: "Bruno Ace SC";
+  font-size: 20px;
+}
+
+input {
+  width: 100px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  padding: 5px;
+}
+
+hr {
+  opacity: 0;
+}
+
+/* buttons */
+button {
+  background-color: #ffffff;
+  border: 2px solid #002a4b;
+  font-family: "Bruno Ace SC";
+  font-size: 20px;
+  margin: 5px 0px;
+  padding: 5px 10px;
+}
+
+button:hover {
+  background-color: #45f1ff;
+}
+
+/* modify this as needed */
+.del {
+  border: 1.5px solid #002a4b;
+  font-size: 12.5px;
+  margin: 2.5px 0px;
+  padding: 2.5px 5px;
+}
+
+/* divs and flexboxes*/
+div {
+  background-color: #458ebf;
+  margin-top: 10px;
+  border: solid 5px #00294d;
+  border-radius: 10px;
+}
+
+#runs-container, #scores-container {
+  height: 250px;
+  width: 30%;
+  overflow: auto;
+}
+
+#stats-container {
+  width: 75%;
+  height: 175px;
+  overflow: auto;
+  margin: 10px auto;
+}
+
+.flexLayout {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  background-color: transparent;
+  border: none;
+}
+
+/* modify this as needed */
+.run {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
