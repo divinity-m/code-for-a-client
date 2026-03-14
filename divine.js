@@ -117,6 +117,6 @@ function findStats(runs) {
 
 function displayStats(stats, element) {
   element.innerHTML = `<h1>Stats</h1>
-  <p>Fastest Time: ${stats["leastTime"]}   |   Lowest Collisions: ${stats["leastHits"]}  |   Highest Score: ${stats["highestScore"]}</p>
-  <p>Average Time: ${stats["avgTime"]}   |   Average Collisions: ${stats["avgHits"]}  |   Average Score: ${stats["avgScore"]}</p>`;
+  <p>Fastest Time: ${stats["leastTime"]}s   |   Lowest Collisions: ${stats["leastHits"]} Hits   |   Highest Score: ${stats["highestScore"]}</p>
+  <p>Average Time: ${stats["avgTime"]}s   |   Average Collisions: ${stats["avgHits"]} Hits   |   Average Score: ${stats["avgScore"]}</p>`;
 }
