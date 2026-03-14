@@ -1,7 +1,5 @@
 // GUNNERS ROBOTICS //
 
-
-
 // Finds the top 3 runs based of scores and return them in an array
 function findTopScores(runs) {
   var [first, second, third] = [{"score": 0}, {"score": 0}, {"score": 0}];
