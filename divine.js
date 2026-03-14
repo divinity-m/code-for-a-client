@@ -45,7 +45,7 @@ function displayRuns(runs, element) {
     Obstacles Hit: ${run["obstaclesHit"]} <br>
     Score: ${run["score"]} <br>
     
-    <button id="Del ${run["runNum"]}" class="Del" style="display: none"
+    <button id="Del ${run["runNum"]}" class="del" style="display: none"
     onclick="deleteRun(RUNS, '${run["runNum"]}')">
     Delete
     </button>
