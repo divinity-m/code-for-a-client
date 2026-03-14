@@ -4,11 +4,8 @@
 function findTopScores(runs) {
   var [first, second, third] = [{"score": 0}, {"score": 0}, {"score": 0}];
 
-  // This variable will replace the undefined values
-  var noRun = {"runNum": 'No Run', 'score': 0}
-
-  // Prevents a run from being overlapped by sorting the array
-  runs = [...runs].sort((a, b) => a.score - b.score);
+  // Prevents a run from being overlapped by sorting the array from greatest score to least score
+  runs = [...runs].sort((a, b) => b.score - a.score);
   
   // Loop through each run and replace the variables with the runs with the top scores
   for (var run of runs) {
@@ -17,6 +14,9 @@ function findTopScores(runs) {
     else if (run["score"] > third["score"]) third = run;
   }
 
+  // This variable will replace the undefined values
+  var noRun = {"runNum": 'No Run', 'score': 0};
+  
   // Replace the undefined values with "No Run"
   for (var run of [first, second, third]) {
     if (JSON.stringify(run) == JSON.stringify({"score": 0})) {
