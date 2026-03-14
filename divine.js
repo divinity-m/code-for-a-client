@@ -79,7 +79,7 @@ function mouseLeftRun(btnElId) {
 
 // Finds the best/average/total stats and returns them in an object
 function findStats(runs) {
-  var [leastTime, leastHits, highestScore] = [Infinity, Infinity, 0];
+  var [leastTime, leastHits, highestScore] = [["Run 0", Infinity], ["Run 0", Infinity], ["Run 0", 0]];
   var [avgTime, avgHits, avgScore] = [0, 0, 0];
   
   if (runs.length == 0) {
@@ -89,10 +89,10 @@ function findStats(runs) {
   else {
     // Loop through each run and replaces the above variables with the best stats ands the averages
     for (var run of runs) {
-      // organizes the best stats into a 'run_number, best_stat' format
-      if (run["completeTime"] < leastTime) leastTime = `${run["runNum"]}, ${run["completeTime"]}`;
-      if (run["obstaclesHit"] < leastHits) leastHits = `${run["runNum"]}, ${run["obstaclesHit"]}`;
-      if (run["score"] > highestScore) highestScore = `${run["runNum"]}, ${run["score"]}`;
+      // organizes the best stats into a [run_number, best_stat] format
+      if (run["completeTime"] < leastTime[1]) leastTime = [run["runNum"], run["completeTime"]];
+      if (run["obstaclesHit"] < leastHits[1]) leastHits = [run["runNum"], run["obstaclesHit"]];
+      if (run["score"] > highestScore[1]) highestScore = [run["runNum"], run["score"]];
       
       avgTime += run["completeTime"];
       avgHits += run["obstaclesHit"];
@@ -117,6 +117,11 @@ function findStats(runs) {
 
 function displayStats(stats, element) {
   element.innerHTML = `<h1>Stats</h1>
-  <p>Fastest Time: ${stats["leastTime"]}s   |   Lowest Collisions: ${stats["leastHits"]} Hits   |   Highest Score: ${stats["highestScore"]}</p>
+  <p>
+  Fastest Time: ${stats["leastTime"][0]}, ${stats["leastTime"][1]}s | 
+  Lowest Collisions: ${stats["leastHits"][0]}, ${stats["leastHits"][0]} Hits | 
+  Highest Score: ${stats["highestScore"][0]}, ${stats["highestScore"][0]}
+  </p>
+  
   <p>Average Time: ${stats["avgTime"]}s   |   Average Collisions: ${stats["avgHits"]} Hits   |   Average Score: ${stats["avgScore"]}</p>`;
 }
