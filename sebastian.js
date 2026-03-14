@@ -4,12 +4,14 @@
 
 // Finds the top 3 runs based of scores and return them in an array
 function findTopScores(runs) {
-  // define variables as objects with a "score" property to avoid bugs
   var [first, second, third] = [{"score": 0}, {"score": 0}, {"score": 0}];
 
   // This variable will replace the undefined values
   var noRun = {"runNum": 'No Run', 'score': 0}
 
+  // Prevents a run from being overlapped by sorting the array
+  runs = [...runs].sort((a, b) => a.score - b.score);
+  
   // Loop through each run and replace the variables with the runs with the top scores
   for (var run of runs) {
     if (run["score"] > first["score"]) first = run;
