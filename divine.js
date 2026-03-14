@@ -81,22 +81,28 @@ function mouseLeftRun(btnElId) {
 function findStats(runs) {
   var [leastTime, leastHits, highestScore] = [Infinity, Infinity, 0];
   var [avgTime, avgHits, avgScore] = [0, 0, 0];
-
-  // Loop through each run and replaces the above variables with the best stats ands the averages
-  for (var run of runs) {
-    // organizes the best stats into a 'run_number, best_stat' format
-    if (run["completeTime"] < leastTime) leastTime = `${run["runNum"]}, ${run["completeTime"]}`;
-    if (run["obstaclesHit"] < leastHits) leastHits = `${run["runNum"]}, ${run["obstaclesHit"]}`;
-    if (run["score"] > highestScore) highestScore = `${run["runNum"]}, ${run["score"]}`;
-    
-    avgTime += run["completeTime"];
-    avgHits += run["obstaclesHit"];
-    avgScore += run["score"];
+  
+  if (runs.length == 0) {
+    // Every stat becomes 'None' if there aren't any runs
+    [leastTime, leastHits, highestScore, avgTime, avgHits, avgScore] = ["None", "None", "None", "None", "None", "None"];
   }
-
-  // Calculate the averages
-  [avgTime, avgHits, avgScore] = [Math.round(avgTime/runs.length), Math.round(avgHits/runs.length), Math.round(avgScore/runs.length)];
-
+  else {
+    // Loop through each run and replaces the above variables with the best stats ands the averages
+    for (var run of runs) {
+      // organizes the best stats into a 'run_number, best_stat' format
+      if (run["completeTime"] < leastTime) leastTime = `${run["runNum"]}, ${run["completeTime"]}`;
+      if (run["obstaclesHit"] < leastHits) leastHits = `${run["runNum"]}, ${run["obstaclesHit"]}`;
+      if (run["score"] > highestScore) highestScore = `${run["runNum"]}, ${run["score"]}`;
+      
+      avgTime += run["completeTime"];
+      avgHits += run["obstaclesHit"];
+      avgScore += run["score"];
+    }
+  
+    // Calculate the averages
+    [avgTime, avgHits, avgScore] = [Math.round(avgTime/runs.length), Math.round(avgHits/runs.length), Math.round(avgScore/runs.length)];
+  }
+    
   // Return the stats in an object
   var stats = {
       "leastTime": leastTime,
